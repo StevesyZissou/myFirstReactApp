@@ -1,8 +1,8 @@
 .TodoApp {
-	display: flex;
+	/*display: inline-flex;
 	position: relative;
 	background-color: powderblue;
-	justify-content: center; 
+	justify-content: center; */
 }
 
 .InputLine {
