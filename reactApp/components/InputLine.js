@@ -1,17 +1,36 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom';  
-// import TodoApp from './TodoApp.js'; 
+  
 
 class InputLine extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props), 
+		this.state = {
+			typedText : ''
+		}
 	}
+
+	handleTyping(event) {
+		this.setState({typedText: event.target.value})
+	}
+
+	handleSubmit(event) {
+		event.preventDefault()
+		// console.log(this.props.addTodo)
+		this.props.addTodo(this.state.typedText)
+		this.setState({typedText: ''})
+
+	}
+
+
 	render() {
 		return (
-			<form className = "InputLine">
+			<div>
 				<label> Add a task: </label>
-				<input type="text" placeholder="What needs to be done?" /> <input type="Submit" value="Add to your todo list" />
-			</form>
+				<input type="text" value={this.state.typedText} placeholder="What needs to be done?" 
+				onChange={(e) => this.handleTyping(e)}  /> 
+				<button onClick={(e) => this.handleSubmit(e)}>Add a task to your list</button>
+			</div>
 		)
 	}
 }
