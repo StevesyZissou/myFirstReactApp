@@ -1,0 +1,1 @@
+export MONGODB_URI='mongodb://otto:password@ds145292.mlab.com:45292/my_first_react_app'

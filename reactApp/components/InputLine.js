@@ -18,6 +18,7 @@ class InputLine extends React.Component {
 		event.preventDefault()
 		// console.log(this.props.addTodo)
 		this.props.addTodo(this.state.typedText)
+		console.log("this.state.typedText = ", this.state.typedText)
 		this.setState({typedText: ''})
 
 	}
