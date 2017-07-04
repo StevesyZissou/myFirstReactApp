@@ -8,13 +8,13 @@ class Todo extends React.Component {
 	}
 	render() {
 		return (
-			<li> 
+			<li key = {this.props.id}> 
 				{(this.props.completed) ? 
 				<strike> {this.props.taskText} </strike> : this.props.taskText}
-				<button type="button" onClick={() => this.props.xClick(this.props.index)}> X </button>
+				<button type="button" onClick={() => this.props.xClick(this.props.id)}> X </button>
 				{(this.props.completed) ?
-				<button type="button" onClick={() => this.props.Toggletodo(this.props.index)} > Uncross </button>
-				: <button type="button" onClick={() => this.props.Toggletodo(this.props.index)} > Crossout </button>
+				<button type="button" onClick={() => this.props.Toggletodo(this.props.id)} > Uncross </button>
+				: <button type="button" onClick={() => this.props.Toggletodo(this.props.id)} > Crossout </button>
 				}
 			</li>
 		)

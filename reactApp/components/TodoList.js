@@ -14,12 +14,12 @@ class TodoList extends React.Component {
 	  			<ul>
 	  				{this.props.todos.map((task, index) => 
 	  					<Todo 
-		  					key = {index}
-		  					index = {index}
-		  					taskText = {task.taskText}
+		  					key = {task._id}
+		  					id = {task._id}
+		  					taskText = {task.task}
 		  					completed = {task.completed}
-		  					xClick = {(index) => this.props.todoXClick(index)}
-		  					Toggletodo = {(index) => this.props.Toggletodo(index)}
+		  					xClick = {(id) => this.props.todoXClick(id)}
+		  					Toggletodo = {(id) => this.props.Toggletodo(id)}
 	  					/>
 	  				)}
 	  			</ul>
